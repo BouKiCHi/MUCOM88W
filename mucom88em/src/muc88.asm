@@ -209,7 +209,7 @@ COM1:
 	CP	'S'
 	JP	Z,M_ST
 	CP	'P'
-	JP	Z,COMPI1
+	JP	Z,END_POLL
 	CP	'Z'
 	JP	Z,CMP1
 	INC	(HL)
@@ -344,6 +344,7 @@ DEBFCH:
 	LD	A,(DEBFLG)
 	CPL
 	LD	(DEBFLG),A
+END_POLL:
 	POP	HL
 	RET
 CMP1:
@@ -3490,7 +3491,7 @@ LNKTXT:	DB	3AH,8FH,0E9H,20H,20H	; 5 ｺ
 	
 MACFG:	DB	0	;0>< AS MACRO PRC
 ;MESS:	DB	'[  MUSICLALF Ver:1.2 ] Address'	;■変更前：メイン画面のバージョン表示
-MESS:	DB	'[ MUCOM88em Ver:1.00 ] Address'	;■変更後
+MESS:	DB	'[ MUCOM88We Ver:1.00 ] Address'	;■変更後
 	DB	':    -    (    )         [ 00:00 ] MODE:'
 MESNML:	DB	'NORMAL  '
 	DB	'LINC    '
