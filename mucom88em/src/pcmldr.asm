@@ -603,7 +603,8 @@ FLAG21:
 ;                       PORT OUT
 ;
 ;------------------------------------------------------------------------------
-WRITE:
+
+WRITE_BASE:
  	PUSH BC
  	LD A,(PORT1)
  	LD C,A
@@ -619,6 +620,24 @@ WRLP2:
  	OUT (C),E
  	POP BC
  	RET
+
+WRITE:
+	LD A,(PORT1)
+	PUSH AF
+	; 1‚Â‚ß
+	LD A,046H
+	LD (PORT1),A
+	CALL WRITE_BASE
+
+	; 2‚Â‚ß
+	LD A,0ACH
+	LD (PORT1),A
+	CALL WRITE_BASE
+
+	POP AF
+	LD (PORT1),A
+	RET	
+
 ;-------------------------------------------------------------------------------
 ;
 ;                       ADPCM PLAY (D/A)
