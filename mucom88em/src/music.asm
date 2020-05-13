@@ -2732,7 +2732,10 @@ PLAY:
 	
 	LD	DE,00A0H
 	CALL	PCMOUT
-	
+
+	; âπó ÇÃÇΩÇﬂÇ…ÉèÅ[ÉNÇñﬂÇ∑
+	POP IX
+
 	LD	D,0BH
 	LD	E,(IX+6)
 	LD	A,(TOTALV)
@@ -2764,7 +2767,6 @@ PL2:
 	; LD	A,(PCMNUM)
 	; LD	(P_OUT),A	; º›∫ﬁ≥¿ﬁΩ
 	
-	POP IX
 	POP	HL
 	RET
 	
