@@ -340,7 +340,7 @@ PL_SND:
 	CALL	ERAM11			;■追記：拡張RAM ライト可/リード可
 PLSET1:
  	; LD	E,3AH ; 0011 1010	;  TimerB Enable AND Load
- 	; LD	D,27H 
+ 	LD	D,27H 
   	; CALL	PSGOUT_BASE		;  TIMER-OFF
 PLSET2:
 	LD	E,3AH ; 0011 1010
